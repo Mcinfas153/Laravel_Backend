@@ -24,7 +24,17 @@ php artisan passport:install
 
 php artisan serve
 
+if there were some problems, like:
 
+RuntimeException: Personal access client not found. Please create one.
+
+php artisan migrate:fresh
+
+php artisan passport:install
+
+or
+
+php artisan passport:client --personal
 
 
 

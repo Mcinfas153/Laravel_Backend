@@ -13,6 +13,10 @@ class PassportController extends Controller
     //
     public $successStatus = 200;
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function register(Request $request){
         // Validation
         $validator = Validator::make($request->all(),
@@ -34,6 +38,11 @@ class PassportController extends Controller
 
         return response()->json(['success'=>$success], $this->successStatus);
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function login(Request $request){
         if(Auth::attempt(['email'=>$request->input('email'), 'password'=>$request->input('password')])){
             $user = Auth::user();
@@ -47,6 +56,10 @@ class PassportController extends Controller
         // return error
         return response()->json(['error'=>'unauthorized'], 401);
     }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getProfile(){
         $success = Auth::user();
        // $success['token'] = $user->createToken('MyApp')->accessToken;
