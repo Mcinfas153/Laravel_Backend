@@ -24,4 +24,14 @@ Route::post('login', 'API\PassportController@login');
 
 Route::group(['middleware'=>'auth:api'], function(){
    Route::get('profile', 'API\PassportController@getProfile');
+
+    /**
+     * ***     Users - - -   some Test Cases / later protected by passport   ***
+     */
+    Route::get('users', 'UserController@index');
+    Route::get('users/{id}', 'UserController@show');
+    Route::post('users/{id}', 'UserController@update');
+    Route::post('users', 'UserController@store');
+    Route::delete('users/{id}', 'UserController@destroy');
+
 });

@@ -60,4 +60,22 @@ class UsersTest extends TestCase
 
         $response->assertStatus(204);
     }
+
+    /**
+     *
+     *     Test POST user with Header and Auth Token ***********************
+     */
+    public function testPostContactAuthTest()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->post('/api/users', [
+            'email'    => 'user' . rand(0, 99999999) . '@gmail.com',
+            'name'     => 'Billy ' . rand(0, 99999999) . ' Joel',
+            'password'     => 'Billy ' . rand(0, 99999999) . ' Joel',
+
+        ], $this->getAccessToken($user));
+
+        $response->assertStatus(201);
+    }
 }
