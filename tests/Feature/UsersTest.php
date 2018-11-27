@@ -61,6 +61,18 @@ class UsersTest extends TestCase
         $response->assertStatus(204);
     }
 
+
+    /**
+     *  GET all users
+     */
+    public function testUsersAuthTest()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->get('/api/users', $this->getAccessToken($user));
+
+        $response->assertStatus(200);
+    }
     /**
      *
      *     Test POST user with Header and Auth Token ***********************

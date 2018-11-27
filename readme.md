@@ -36,6 +36,11 @@ or
 
 php artisan passport:client --personal
 
+create some dummy users
+
+composer dump-autoload
+
+php artisan db:seed
 
 
 ## License
