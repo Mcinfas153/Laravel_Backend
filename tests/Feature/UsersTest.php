@@ -75,7 +75,7 @@ class UsersTest extends TestCase
     }
     /**
      *
-     *     Test POST user with Header and Auth Token ***********************
+     *     Test POST user with Header and Auth Token ******************************************************************
      */
     public function testPostContactAuthTest()
     {
@@ -89,5 +89,13 @@ class UsersTest extends TestCase
         ], $this->getAccessToken($user));
 
         $response->assertStatus(201);
+    }
+
+    public function testGetContactAuthTest(){
+        $user = factory(User::class)->create();
+
+        $response = $this->get('/users', $this->getAccessToken($user));
+
+        $response->assertStatus(200);
     }
 }
