@@ -73,6 +73,7 @@ class UsersTest extends TestCase
 
         $response->assertStatus(200);
     }
+
     /**
      *
      *     Test POST user with Header and Auth Token ******************************************************************
@@ -94,8 +95,22 @@ class UsersTest extends TestCase
     public function testGetContactAuthTest(){
         $user = factory(User::class)->create();
 
-        $response = $this->get('/users', $this->getAccessToken($user));
+        $response = $this->get('/api/users', $this->getAccessToken($user));
 
         $response->assertStatus(200);
+    }
+    /**
+     *       DELETE a user with Auth and Token ***********************************
+     */
+    public function testEndpointContactsDeleteAuthTest(){
+
+        $this->withoutMiddleware();
+
+        $user = factory(User::class)->create([]);
+        $response = $this->delete('/api/users/' . $user->id, $this->getAccessToken($user));
+
+        //var_dump ($this->getAccessToken($user));
+
+        $response->assertStatus(204);
     }
 }
