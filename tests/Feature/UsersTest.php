@@ -62,11 +62,13 @@ class UsersTest extends TestCase
     }
 
 
+
+
     /**
-     *  GET all users
+     * ****************************************
+     *   Test GET  user with Auth Token *******************************************************************************
      */
-    public function testUsersAuthTest()
-    {
+    public function testGetContactAuthTest(){
         $user = factory(User::class)->create();
 
         $response = $this->get('/api/users', $this->getAccessToken($user));
@@ -75,7 +77,7 @@ class UsersTest extends TestCase
     }
 
     /**
-     *
+     * *****************************************************
      *     Test POST user with Header and Auth Token ******************************************************************
      */
     public function testPostContactAuthTest()
@@ -92,21 +94,37 @@ class UsersTest extends TestCase
         $response->assertStatus(201);
     }
 
-    public function testGetContactAuthTest(){
+    /**
+     * *********************************************
+     *   Test POST Update user with Auth Token ************************************************************************
+     */
+    public function testUpdateUserAuthTest()
+    {
         $user = factory(User::class)->create();
 
-        $response = $this->get('/api/users', $this->getAccessToken($user));
+        $anotherUser = factory(User::class)->make();
 
-        $response->assertStatus(200);
+        $response = $this->post('/api/users/'.$user->id, [
+            'id' => (int) $user->id,
+            'email'    => $anotherUser->email,
+            'name'     => $anotherUser->name,
+            'password'     => $anotherUser->password,
+
+        ], $this->getAccessToken($user));
+
+        $response->assertStatus(201);
+
     }
+
     /**
-     *       DELETE a user with Auth and Token ***********************************
+     *  *********************************************
+     *       DELETE a user with Auth and Token ************************************************************************
      */
     public function testEndpointContactsDeleteAuthTest(){
 
-        $this->withoutMiddleware();
+        $this->withoutMiddleware();                         // i dont know, why i need this ???
 
-        $user = factory(User::class)->create([]);
+        $user = factory(User::class)->create();
         $response = $this->delete('/api/users/' . $user->id, $this->getAccessToken($user));
 
         //var_dump ($this->getAccessToken($user));
