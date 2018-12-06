@@ -1,8 +1,14 @@
 <br>
 
-# Laravel Backend API using passport
+# Laravel Backend REST API using passport return JSON
 
-## 
+this is an open source project, for understanding the REST API communication
+
+between Frontend and Backend
+
+
+
+## Frontend could be a SPA maybe in Ember-JS, VUE-JS or other JS-App
 
 
 
