@@ -12,11 +12,13 @@ between Frontend and Backend
 
 
 
-### Installation
+### Installation maybe for example on a Ubuntu Linux LAMP System
 
 git clone git@github.com:rassloff/API_passport.git
 
-sudo chmod -R 777 storage/
+cd API_passport
+
+chmod -R 777 storage/
 
 composer install
 
@@ -24,11 +26,29 @@ create a database
 
 create a .env file
 
+cp .env.example .env
+
 php artisan key:generate
+
+
+php artisan serve (local mac / linux)
+
+config your webserver( apache or nginx ) document root to public 
+
+if apache:
+
+<Directory /var/www/API_passport/public/>
+                Options Indexes FollowSymLinks
+                AllowOverride All
+                Require all granted
+                Order allow,deny
+                allow from all
+</Directory>
+
+php artisan migrate
 
 php artisan passport:install
 
-php artisan serve
 
 if there were some problems, like:
 
