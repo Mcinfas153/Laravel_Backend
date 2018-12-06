@@ -23,5 +23,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'lastName' => $faker->lastName,
         'city' => $faker->city,
         'street' => $faker->streetName,
+        'mobil' => $faker->phoneNumber,
+        'phone'=> $faker->phoneNumber,
     ];
 });
