@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\User;
+use DB;
 
 class UserController extends Controller
 {
@@ -90,5 +91,20 @@ class UserController extends Controller
 
             return response()->json('Could not delete a contact');
         }
+    }
+
+
+    /**
+     *  SEARCH LIKE name %
+     */
+    public function searchname($name): JsonResponse
+    {
+        $users = DB::table('users')
+            ->where('name', 'like', $name.'%')
+            ->get();
+
+        return response()->json([
+            "usersss" => $users
+        ], 200);
     }
 }
