@@ -29,4 +29,10 @@ Route::get('users/{id}', 'UserController@show');
 
 Route::get('user', 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
+
+
+/**
+ * * * * * * * *  SEARCH * * * * * * * * * * * * *
+ */
+
 Route::get('usersearch/{name}', 'UserController@searchname');

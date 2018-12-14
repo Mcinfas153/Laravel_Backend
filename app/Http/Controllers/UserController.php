@@ -14,14 +14,29 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(): JsonResponse
+    public function index( Request $request, User $user )
     {
-        $users = User::all();
+        $user = $user->newQuery();
 
-        return response()->json([
-            "users" => $users
-        ], 200);
+        if ($request->has('name')) {
+            $user->where('name', 'like', $request->input('name').'%');
+        }
+
+        if ($request->has('firstName')) {
+            $user->where('firstName', 'like', $request->input('firstName').'%');
+        }
+
+        if ($request->has('lastName')) {
+            $user->where('lastName', 'like', $request->input('lastName').'%');
+        }
+
+        if ($request->has('city')) {
+            $user->where('city', 'like', $request->input('city').'%');
+        }
+
+        return $user->get();
     }
+
 
     /**
      * Store a newly created resource in storage.
