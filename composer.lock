@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74fefe4777673d653d20599c1f1c92c6",
+    "content-hash": "7696c25f1ba1db30c1f23f9c4ad0b4f9",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -745,63 +745,6 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
-        },
-        {
-            "name": "jedrzej/searchable",
-            "version": "0.0.14",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jedrzej/searchable.git",
-                "reference": "b2c45b77e436dbff0ad5ac5cdf57951d9b253608"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jedrzej/searchable/zipball/b2c45b77e436dbff0ad5ac5cdf57951d9b253608",
-                "reference": "b2c45b77e436dbff0ad5ac5cdf57951d9b253608",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "*",
-                "illuminate/support": "*"
-            },
-            "require-dev": {
-                "codeception/codeception": "2.0.*",
-                "codeception/specify": "*"
-            },
-            "suggest": {
-                "jedrzej/sortable": "Allows sorting your models using request parameters",
-                "jedrzej/withable": "Allows eager loading of relations using request parameters"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Jedrzej\\": "src/Jedrzej/",
-                    "Illuminate\\": "vendor/laravel/framework/src/Illuminate/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jędrzej Kuryło",
-                    "email": "jedrzej.kurylo@gmail.com"
-                }
-            ],
-            "description": "Searchable trait for Laravel's Eloquent models - filter your models using request parameters",
-            "homepage": "https://github.com/jedrzej/searchable",
-            "keywords": [
-                "api",
-                "eloquent",
-                "filter",
-                "laravel",
-                "model",
-                "request",
-                "search",
-                "searchable"
-            ],
-            "time": "2017-10-30T12:38:48+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1572,16 +1515,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.12",
+            "version": "2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "8814dc7841db159daed0b32c2b08fb7e03c6afe7"
+                "reference": "42603ce3f42a27f7e14e54feab95db7b680ad473"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8814dc7841db159daed0b32c2b08fb7e03c6afe7",
-                "reference": "8814dc7841db159daed0b32c2b08fb7e03c6afe7",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/42603ce3f42a27f7e14e54feab95db7b680ad473",
+                "reference": "42603ce3f42a27f7e14e54feab95db7b680ad473",
                 "shasum": ""
             },
             "require": {
@@ -1660,7 +1603,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2018-11-04T05:45:48+00:00"
+            "time": "2018-12-16T17:45:25+00:00"
         },
         {
             "name": "psr/container",

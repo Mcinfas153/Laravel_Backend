@@ -22,6 +22,7 @@ Route::get('/', function () {
  */
 Route::get('users', 'UserController@index');
 Route::get('users/{id}', 'UserController@show');
+
 //Route::post('users/{id}', 'UserController@update');
 //Route::post('users', 'UserController@store');
 //Route::delete('users/{id}', 'UserController@destroy');
