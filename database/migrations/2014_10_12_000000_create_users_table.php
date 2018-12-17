@@ -18,12 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('name')->default('bitte eintragen');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('firstName')->nullable;
-            $table->string('lastName')->nullable;
+            $table->string('first_name')->nullable;
+            $table->string('last_name')->nullable;
             $table->string('mobil')->nullable;
-            $table->string('phone')->nullable;
             $table->string('city')->nullable;
+            $table->string('zip_code')->nullable;
             $table->string('street')->nullable;
+            $table->string('fisat_level')->nullable;
             $table->rememberToken();
             $table->timestamps();
         });

@@ -19,11 +19,12 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => bcrypt($faker->password), // secret
         'remember_token' => str_random(17),
-        'firstName' => $faker->firstName,
-        'lastName' => $faker->lastName,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
         'city' => $faker->city,
+        'zip_code' => $faker->numberBetween(9000,90000),
         'street' => $faker->streetName,
         'mobil' => $faker->phoneNumber,
-        'phone'=> $faker->phoneNumber,
+        'fisat_level' => $faker->numberBetween(1,3),
     ];
 });

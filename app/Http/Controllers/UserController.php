@@ -14,7 +14,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( Request $request, User $user )
+    public function index( Request $request, User $user ): JsonResponse
     {
         $user = $user->newQuery();
 
@@ -22,19 +22,26 @@ class UserController extends Controller
             $user->where('name', 'like', $request->input('name').'%');
         }
 
-        if ($request->has('firstName')) {
-            $user->where('firstName', 'like', $request->input('firstName').'%');
+        if ($request->has('first_name')) {
+            $user->where('first_name', 'like', $request->input('first_name').'%');
         }
 
-        if ($request->has('lastName')) {
-            $user->where('lastName', 'like', $request->input('lastName').'%');
+        if ($request->has('last_name')) {
+            $user->where('last_name', 'like', $request->input('last_name').'%');
         }
 
         if ($request->has('city')) {
             $user->where('city', 'like', $request->input('city').'%');
         }
 
-        return $user->get();
+        //return $user->get();
+
+        $users = $user->get();
+
+
+        return response()->json([
+            "users" => $users
+        ], 200);
     }
 
 
@@ -61,6 +68,7 @@ class UserController extends Controller
      */
     public function show($id): JsonResponse
     {
+        echo "in show";
         $users = User::find($id);
 
         return response()->json([
