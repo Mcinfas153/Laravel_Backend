@@ -88,6 +88,12 @@ This API uses HTTP status codes to communicate with the API consumer.
 + `404 Not Found` - When a non-existent resource is requested.
 + `405 Method Not Allowed` - Method not allowed.
 
+## cURL code
+
+curl -X GET -H 'Accept: application/vnd.api+json' -H "Content-Type:application/vnd.api+json"   http://localhost:8000/users
+
+
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
