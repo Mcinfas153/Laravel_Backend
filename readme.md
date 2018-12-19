@@ -92,6 +92,7 @@ This API uses HTTP status codes to communicate with the API consumer.
 
 curl -X GET -H 'Accept: application/vnd.api+json' -H "Content-Type:application/vnd.api+json"   http://localhost:8000/users
 
+curl http://localhost:8000/users
 
 
 ## License
