@@ -15,17 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ *   MOVIES
+ */
 
+Route::get('movies', 'MovieController@index');
 
 /**
  * ***     Users - - -   some Test Cases / later protected by passport   ***
  */
 Route::get('users', 'UserController@index');
 Route::get('users/{id}', 'UserController@show');
+Route::post('users/{id}', 'UserController@update');
+Route::post('users', 'UserController@store');
+Route::delete('users/{id}', 'UserController@destroy');
 
-//Route::post('users/{id}', 'UserController@update');
-//Route::post('users', 'UserController@store');
-//Route::delete('users/{id}', 'UserController@destroy');
+
 
 
 Route::get('user', 'UserController@index');

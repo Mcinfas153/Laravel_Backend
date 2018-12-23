@@ -87,6 +87,7 @@ This API uses HTTP status codes to communicate with the API consumer.
 + `403 Forbidden` - When authentication succeeded but authenticated user doesn't have access to the resource.
 + `404 Not Found` - When a non-existent resource is requested.
 + `405 Method Not Allowed` - Method not allowed.
++ `419 Authentication Timeout` - Auth Error
 
 ## cURL code
 
