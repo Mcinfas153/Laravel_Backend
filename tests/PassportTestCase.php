@@ -20,46 +20,4 @@ class PassportTestCase extends TestCase
         // Important code goes here.
     }
 
-    /**
-     * Test POST contact with Header and Auth Token
-     */
-    public function testPostContactAuthTest()
-    {
-        $user = factory(User::class)->create();
-
-        $response = $this->post('/api/users', [
-            'email'    => 'user' . rand(0, 99999999) . '@gmail.com',
-            'name'     => 'Billy ' . rand(0, 99999999) . ' Joel',
-            'password'     => 'Billy ' . rand(0, 99999999) . ' Joel',
-        ], $this->headers($user));
-
-        $response->assertStatus(201);
-    }
-
-    /*
-     *
-     */
-    public function testUpdateUserAuthTest()
-    {
-        $user = factory(User::class)->create();
-
-        $anotherUser = factory(User::class)->make();
-
-        $response = $this->post('/api/users/'.$user->id, [
-            'id' => (int) $user->id,
-            'email'    => $anotherUser->email,
-            'name'     => $anotherUser->name,
-            'first_name'     => $anotherUser->name,
-            'last_name'     => $anotherUser->name,
-            'mobil'     => $anotherUser->name,
-            'city'     => $anotherUser->name,
-            'zip_code'     => $anotherUser->name,
-            'street'     => $anotherUser->name,
-            'fisat_level'     => $anotherUser->name,
-            'password'     => $anotherUser->password
-        ], $this->getAccessToken($user));
-
-        $response->assertStatus(201);
-
-    }
 }
