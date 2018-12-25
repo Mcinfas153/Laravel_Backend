@@ -35,4 +35,31 @@ class PassportTestCase extends TestCase
 
         $response->assertStatus(201);
     }
+
+    /*
+     *
+     */
+    public function testUpdateUserAuthTest()
+    {
+        $user = factory(User::class)->create();
+
+        $anotherUser = factory(User::class)->make();
+
+        $response = $this->post('/api/users/'.$user->id, [
+            'id' => (int) $user->id,
+            'email'    => $anotherUser->email,
+            'name'     => $anotherUser->name,
+            'first_name'     => $anotherUser->name,
+            'last_name'     => $anotherUser->name,
+            'mobil'     => $anotherUser->name,
+            'city'     => $anotherUser->name,
+            'zip_code'     => $anotherUser->name,
+            'street'     => $anotherUser->name,
+            'fisat_level'     => $anotherUser->name,
+            'password'     => $anotherUser->password
+        ], $this->getAccessToken($user));
+
+        $response->assertStatus(201);
+
+    }
 }

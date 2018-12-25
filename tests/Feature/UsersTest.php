@@ -2,13 +2,24 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\User;
 
+
+use Laravel\Passport\ClientRepository;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
+
 class UsersTest extends TestCase
 {
+    use DatabaseTransactions;
+
+    protected $headers = [];
+    protected $scopes = [];
+    protected $user;
+
     /**
      * A basic test example.
      *
@@ -34,7 +45,7 @@ class UsersTest extends TestCase
     /**
      *    POST  user without Header and Auth
      */
-/*    public function testPostUserTest()
+ /*   public function testPostUserTest()
     {
 
         $this->withoutMiddleware();
@@ -77,7 +88,8 @@ class UsersTest extends TestCase
      * *****************************************************
      *     Test POST user with Header and Auth Token ******************************************************************
      */
- /*   public function testPostContactAuthTest()
+/*
+    public function testPostContactAuthTest()
     {
         $user = factory(User::class)->create();
 
@@ -99,13 +111,13 @@ class UsersTest extends TestCase
         ], $this->getAccessToken($user));
 
         $response->assertStatus(201);
-    }*/
-
+    }
+*/
     /**
      * *********************************************
      *   Test POST Update user with Auth Token ************************************************************************
      */
-    public function testUpdateUserAuthTest()
+ /*   public function testUpdateUserAuthTest()
     {
         $user = factory(User::class)->create();
 
@@ -127,7 +139,8 @@ class UsersTest extends TestCase
 
         $response->assertStatus(201);
 
-    }
+    }*/
+
 
     /**
      *  *********************************************
