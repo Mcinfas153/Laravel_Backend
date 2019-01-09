@@ -33,7 +33,7 @@ php artisan key:generate
 
 php artisan serve (local mac / linux)
 
-config your webserver( apache or nginx ) document root to public 
+config your webserver( apache or nginx ) document root to public
 
 if apache:
 
@@ -95,6 +95,9 @@ curl -X GET -H 'Accept: application/vnd.api+json' -H "Content-Type:application/v
 
 curl http://localhost:8000/users
 
+## Support or Helping ?!
+
+connect me on GitHub or Linkedin
 
 ## License
 
