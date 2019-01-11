@@ -28,5 +28,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * @return mixed
+     *
+     * many to many
+     *
+     * every user can have many movies - - - and every movie can have many users
+     *
+     */
+    public function movies()
+    {
+        return $this->belongsToMany(Movie::class);
+    }
 
 }
