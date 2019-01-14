@@ -33,12 +33,12 @@ class User extends Authenticatable
      *
      * many to many
      *
-     * every user can have many movies - - - and every movie can have many users
+     * every user can have many movies ***
      *
      */
     public function movies()
     {
-        return $this->belongsToMany(Movie::class);
+        return $this->hasMany(Movie::class);
     }
 
 }

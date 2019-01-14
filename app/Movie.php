@@ -8,10 +8,10 @@ class Movie extends Model
 {
 
     /**
-     * function users to create the many to many realationchip
+     * function users to create the  realationchip
      */
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

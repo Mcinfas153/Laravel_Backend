@@ -15,10 +15,11 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Movie::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'title' => $faker->name,
         'director' => $faker->firstName,
-        'date' => $faker->dateTime,
+        'year' => $faker->year,
+        'country' => $faker->country,
         'search_words' => $faker->city,
-
+        'user_id' => $faker->randomDigitNotNull,
     ];
 });
