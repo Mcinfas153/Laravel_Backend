@@ -16,12 +16,13 @@ Route::get('/', function () {
 });
 
 /**
- *   MOVIES
+ *   MOVIES ****************************
  */
 
 Route::get('movies', 'MovieController@index');
 
 /**
+ * *************************************************************************
  * ***     Users - - -   some Test Cases / later protected by passport   ***
  */
 Route::get('users', 'UserController@index');
@@ -37,7 +38,7 @@ Route::get('user', 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
 
 
-/**
+/** ***************************************************
  * * * * * * * *  SEARCH * * * * * * * * * * * * *
  */
 
