@@ -41,9 +41,9 @@ class CreateUsersTable extends Migration
         $newAdmin->id = 1;
         $newAdmin->first_name = 'Anton';
         $newAdmin->last_name = 'Anfang';
-        $newAdmin->login = 'rossixx';
+        $newAdmin->login = 'Mariaaa';
         $newAdmin->email = 'admin@rassloff.info';
-        $newAdmin->password = Hash::make('saxen1971');
+        $newAdmin->password = Hash::make('iceACDC1234');
 
         $newAdmin->save();
     }
