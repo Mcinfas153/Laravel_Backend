@@ -95,6 +95,10 @@ curl -X GET -H 'Accept: application/vnd.api+json' -H "Content-Type:application/v
 
 curl http://localhost:8000/users
 
+### Data Model
+
+every User has many Movies
+
 ## Support or Helping ?!
 
 connect me on GitHub or Linkedin
