@@ -68,7 +68,7 @@ class UserController extends Controller
      */
     public function show($id): JsonResponse
     {
-        echo "in show";
+        //echo "in show";
         $users = User::find($id);
 
         return response()->json([
