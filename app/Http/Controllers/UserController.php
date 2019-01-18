@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\User;
+use App\Movie;
 use DB;
 
 class UserController extends Controller
@@ -34,10 +35,7 @@ class UserController extends Controller
             $user->where('city', 'like', $request->input('city').'%');
         }
 
-        //return $user->get();
-
         $users = $user->get();
-
 
         return response()->json([
             "users" => $users
@@ -68,8 +66,9 @@ class UserController extends Controller
      */
     public function show($id): JsonResponse
     {
-        //echo "in show";
-        $users = User::find($id);
+        //$users = User::find($id);
+
+        $users = User::with('movies')->whereId($id)->first();
 
         return response()->json([
             "users" => $users
