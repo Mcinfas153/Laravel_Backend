@@ -99,6 +99,8 @@ curl http://localhost:8000/users
 
 every User has many Movies
 
+### Authentication with PASSPORT
+
 ## Support or Helping ?!
 
 connect me on GitHub or Linkedin
