@@ -38,13 +38,13 @@ class CreateUsersTable extends Migration
          *      create a test ADMIN
          */
         $newAdmin = new User();
-        $newAdmin->id = 1;
+        $newAdmin->id = 112;
         $newAdmin->first_name = 'Anton';
         $newAdmin->last_name = 'Anfang';
-        $newAdmin->login = 'geheim2019xyA?g';
-        $newAdmin->login = 'geheim2019xyA?g';
-        $newAdmin->email = 'youremail@gmail.com';
-        $newAdmin->password = Hash::make('yx87uzR5T6z&AgbXi2019ACDC!ok');
+        $newAdmin->name = 'geheim';
+        $newAdmin->login = 'geheim';
+        $newAdmin->email = 'admin@gmail.com';
+        $newAdmin->password = Hash::make('geheim');
 
         $newAdmin->save();
     }

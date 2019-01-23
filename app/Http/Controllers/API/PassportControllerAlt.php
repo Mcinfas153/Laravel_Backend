@@ -8,7 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 
-class PassportController extends Controller
+class PassportControllerAlt extends Controller
 {
     //
     public $successStatus = 200;
@@ -44,31 +44,28 @@ class PassportController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function login(Request $request){
-//        return response()->json(['email'=>$request->input('email'), 'password'=>$request->input('password')], 200);
 
-// username
-
-        if(Auth::attempt(['email'=>$request->input('username'), 'password'=>$request->input('password')])){
+        if(Auth::attempt(['email'=>$request->input('email'), 'password'=>$request->input('password')])){
             $user = Auth::user();
-            $success['access_token'] = $user->createToken('MyApp')->accessToken;
+            $success['token'] = $user->createToken('MyApp')->accessToken;
             $success['email'] = $user->email;
-            return response()->json([
-                'success'=>$success,
-                'status_code'=>$this->successStatus,
-                'status_message'=>'success',
-                "access_token"=>"2YotnFZFEjr1zCsicMWpAA",
-                "token_type"=>"bearer"], $this->successStatus);
+
+            return response()->json(['success'=>$success, 'status_code'=>$this->successStatus,
+                'status_message'=>'success'], $this->successStatus);
         }
-        // return error
+
+
         return response()->json(['error'=>'unauthorized'], 401);
     }
+
     /**
      * @return \Illuminate\Http\JsonResponse
      */
     public function getProfile(){
         $success = Auth::user();
-        // $success['token'] = $user->createToken('MyApp')->accessToken;
+       // $success['token'] = $user->createToken('MyApp')->accessToken;
+
         return response()->json(['data'=>$success, 'status_code'=>$this->successStatus,
-            'status_message'=>'success'], $this->successStatus);
+                'status_message'=>'success'], $this->successStatus);
     }
 }
