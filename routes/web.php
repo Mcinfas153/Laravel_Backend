@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::get('movies', 'MovieController@index');
 
+Route::get('tags', 'TagController@index');
 /**
  * *************************************************************************
  * ***     Users - - -   some Test Cases / later protected by passport   ***
