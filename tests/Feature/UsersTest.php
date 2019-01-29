@@ -18,25 +18,26 @@ class UsersTest extends TestCase
     protected $user;
 
     /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-
-    /**
-     *  GET all users
+     *  GET all created users ***********************************
      */
     public function testUsersTest()
     {
+        $users = factory(User::class, 10)->create();
+
         $response = $this->get('/users');
 
         $response->assertStatus(200);
+        $response->assertJsonCount(10, 'users');
+        $response->assertJson([
+            'users' => $users->map(function($user) {
+                return [
+                    'id' => $user->getKey(),
+                    'first_name' => $user->first_name,
+                    'last_name' => $user->last_name,
+                    'email' => $user->email,
+                ];
+            })->toArray(),
+        ]);
     }
 
     /**
