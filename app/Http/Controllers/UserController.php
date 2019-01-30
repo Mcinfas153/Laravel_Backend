@@ -84,11 +84,23 @@ class UserController extends Controller
      */
     public function update(Request $request, $id): JsonResponse
     {
-        $user = User::find($id)->update($request->all());
+        $user = User::findOrFail($id);
+        $request->validate([
+            'user.first_name'=>'required|max:70',
+            'user.last_name'=>'required|max:70',
+            'user.street'=>'required|max:255',
+            'user.city'=>'required|max:255',
+            'user.zip_code'=>'required|max:25',
+            'user.mobil'=>'required|max:255',
+            'user.phone'=>'required|max:255',
+            'user.email' => 'required|string|email|max:255',
+        ]);
+        $input = $request->all();
+        $user->fill($input['user'])->save();
 
         return response()->json([
             "users" => $user
-        ],  201);
+        ], 201);
     }
 
     /**
