@@ -82,12 +82,14 @@ This API uses HTTP status codes to communicate with the API consumer.
 + `200 OK` - Response to a successful GET, PUT, PATCH or DELETE.
 + `201 Created` - Response to a POST that results in a creation.
 + `204 No Content` - Response to a successful request that won't be returning a body (like a DELETE request).
++ `302 Found is a common way of performing URL redirection` 
 + `400 Bad Request` - Malformed request; form validation errors.
 + `401 Unauthorized` - When no or invalid authentication details are provided.
 + `403 Forbidden` - When authentication succeeded but authenticated user doesn't have access to the resource.
 + `404 Not Found` - When a non-existent resource is requested.
 + `405 Method Not Allowed` - Method not allowed.
 + `419 Authentication Timeout` - Auth Error
++ `422 Unprocessable Entity` - ???
 
 ## cURL code
 

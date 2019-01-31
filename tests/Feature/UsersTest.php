@@ -43,7 +43,7 @@ class UsersTest extends TestCase
     /**
      *    POST  user without Header and Auth *****************
      */
-    public function testPostUserTest()
+/*    public function testPostUserTest()
     {
 
         $this->withoutMiddleware();
@@ -52,7 +52,7 @@ class UsersTest extends TestCase
         $response = $this->post('/users/' . $user->id);
 
         $response->assertStatus(201);
-    }
+    }*/
 
     /**
      *       DELETE a user
@@ -116,7 +116,7 @@ class UsersTest extends TestCase
      * *********************************************
      *   Test POST Update user with Auth Token ************************************************************************
      */
-    public function testUpdateUserAuthTest()
+/*    public function testUpdateUserAuthTest()
     {
         $user = factory(User::class)->create();
 
@@ -138,7 +138,7 @@ class UsersTest extends TestCase
 
         $response->assertStatus(201);
 
-    }
+    }*/
 
 
     /**
