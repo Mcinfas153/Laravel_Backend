@@ -21,6 +21,18 @@ Route::get('/', function () {
 
 Route::get('movies', 'MovieController@index');
 
+/**
+ *   Projects
+ */
+Route::get('projects', 'ProjectController@index');
+Route::get('projects/{id}', 'ProjectController@show');
+Route::put('projects/{id}', 'ProjectController@update');
+Route::post('projects', 'ProjectController@store');
+Route::delete('projects/{id}', 'ProjectController@destroy');
+/**
+ *  Tags
+ */
+
 Route::get('tags', 'TagController@index');
 /**
  * *************************************************************************
@@ -28,7 +40,7 @@ Route::get('tags', 'TagController@index');
  */
 Route::get('users', 'UserController@index');
 Route::get('users/{id}', 'UserController@show');
-Route::post('users/{id}', 'UserController@update');
+Route::put('users/{id}', 'UserController@update');
 Route::post('users', 'UserController@store');
 Route::delete('users/{id}', 'UserController@destroy');
 

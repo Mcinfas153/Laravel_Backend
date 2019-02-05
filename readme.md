@@ -14,9 +14,9 @@ between Frontend and Backend
 
 ### Installation maybe for example on a Ubuntu Linux LAMP System
 
-git clone git@github.com:rassloff/API_passport.git
+git clone git@github.com:rassloff/Laravel_Backend.git
 
-cd API_passport
+cd Laravel_Backend
 
 chmod -R 777 storage/
 
@@ -37,7 +37,7 @@ config your webserver( apache or nginx ) document root to public
 
 if apache:
 
-<Directory /var/www/API_passport/public/>
+<Directory /var/www/Laravel_Backend/public/>
                 Options Indexes FollowSymLinks
                 AllowOverride All
                 Require all granted

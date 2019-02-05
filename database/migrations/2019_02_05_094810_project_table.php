@@ -20,6 +20,8 @@ class ProjectTable extends Migration
             $table->string('manager')->default('bitte eintragen');
             $table->string('description')->default('bitte eintragen');
             $table->string('date')->default('bitte eintragen');
+
+            $table->string('user_id')->default('1');
             $table->timestamps();
         });
     }
