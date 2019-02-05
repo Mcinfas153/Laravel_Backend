@@ -17,6 +17,7 @@ abstract class TestCase extends BaseTestCase
         // clear database
 
         DB::statement('TRUNCATE TABLE `movies`');
+        DB::statement('TRUNCATE TABLE `projects`');
         DB::statement('TRUNCATE TABLE `tags`');
         DB::statement('TRUNCATE TABLE `users`');
 
