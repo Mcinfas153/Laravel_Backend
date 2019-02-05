@@ -58,7 +58,7 @@ class ProjectController extends Controller
     public function show($id): JsonResponse
     {
 
-        $data = Project::with([ 'user', 'users' ])->whereId($id)->first();
+        $data = Project::with([ 'user' ])->whereId($id)->first();
 
         return response()->json([
             "projects" => $data,
