@@ -29,7 +29,6 @@ class CreateUsersTable extends Migration
             $table->string('city')->default('bitte eintragen');
             $table->string('zip_code')->default('bitte eintragen');
             $table->string('street')->default('bitte eintragen');
-            $table->string('fisat_level')->default('bitte eintragen');
             $table->rememberToken();
             $table->timestamps();
         });

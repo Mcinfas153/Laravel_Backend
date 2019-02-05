@@ -8,7 +8,7 @@ class Project extends Model
 {
 
     /**
-     * function user to create the  realationchip one to many
+     * function user to create the  realationchip - one to many
      */
     public function user()
     {
@@ -16,7 +16,7 @@ class Project extends Model
     }
 
     /**
-     * function users to create the  realationchip many to many
+     * function users to create the  realationchip - many to many
      */
     public function users()
     {
