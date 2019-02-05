@@ -8,10 +8,19 @@ class Project extends Model
 {
 
     /**
-     * function users to create the  realationchip
+     * function user to create the  realationchip one to many
      */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * function users to create the  realationchip many to many
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class)
+            ->withTimestamps();
     }
 }

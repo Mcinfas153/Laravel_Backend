@@ -16,6 +16,10 @@ class UserProjectWorking extends Migration
         Schema::create('user_project_working', function(Blueprint $table)
         {
             $table->increments('id');
+
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('project_id')->unsigned()->nullable();
+/*
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
@@ -23,9 +27,9 @@ class UserProjectWorking extends Migration
             $table->integer('project_id')->unsigned()->nullable();
             $table->foreign('project_id')->references('id')
                 ->on('projects')->onDelete('cascade');
-
-            $table->timestamp('start_time');
-            $table->timestamp('end_time');
+*/
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +41,6 @@ class UserProjectWorking extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropTable('user_project_working');
     }
 }
