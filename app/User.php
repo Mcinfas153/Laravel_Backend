@@ -41,4 +41,9 @@ class User extends Authenticatable
         return $this->hasMany(Movie::class);
     }
 
+    public function projects()      // has many - for update, create
+    {
+        return $this->hasMany(Project::class);
+    }
+
 }
