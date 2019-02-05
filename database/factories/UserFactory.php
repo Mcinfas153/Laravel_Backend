@@ -25,6 +25,5 @@ $factory->define(App\User::class, function (Faker $faker) {
         'zip_code' => $faker->numberBetween(9000,90000),
         'street' => $faker->streetName,
         'mobil' => $faker->phoneNumber,
-        'fisat_level' => $faker->numberBetween(1,3),
     ];
 });

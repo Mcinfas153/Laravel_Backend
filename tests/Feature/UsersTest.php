@@ -104,7 +104,6 @@ class UsersTest extends TestCase
             'city'     => $anotherUser->name,
             'zip_code'     => $anotherUser->name,
             'street'     => $anotherUser->name,
-            'fisat_level'     => $anotherUser->name,
             'password'     => $anotherUser->password
 
         ], $this->getAccessToken($user));
@@ -132,7 +131,6 @@ class UsersTest extends TestCase
             'city'     => $anotherUser->name,
             'zip_code'     => $anotherUser->name,
             'street'     => $anotherUser->name,
-            'fisat_level'     => $anotherUser->name,
             'password'     => $anotherUser->password
         ], $this->getAccessToken($user));
 
