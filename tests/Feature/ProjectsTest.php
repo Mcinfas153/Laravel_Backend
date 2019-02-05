@@ -15,8 +15,24 @@ class ProjectsTest extends TestCase
     public function testProjectsTest()
     {
         $response = $this->get('/projects');
+        $response->assertStatus(200);
+
+        $projects = factory(Project::class, 10)->create();
+
+        $response = $this->get('/projects');
 
         $response->assertStatus(200);
+        $response->assertJsonCount(10, 'projects');
+        $response->assertJson([
+            'projects' => $projects->map(function($project) {
+                return [
+                    'id' => $project->getKey(),
+                    'number' => $project->number,
+                    'name' => $project->name,
+                    'manager' => $project->manager,
+                ];
+            })->toArray(),
+        ]);
     }
 
     /**
