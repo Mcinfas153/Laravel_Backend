@@ -103,7 +103,11 @@ curl http://localhost:8000/users
 
 ### Data Model
 
-every User has many Movies
+User / Project - many to many
+
+User / Movie - one to many
+
+
 
 ### Authentication with PASSPORT
 
