@@ -17,13 +17,12 @@ $factory->define(App\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => bcrypt($faker->password), // secret
-        'remember_token' => str_random(17),
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
         'city' => $faker->city,
         'zip_code' => $faker->numberBetween(9000,90000),
         'street' => $faker->streetName,
         'mobil' => $faker->phoneNumber,
+        'password' => $faker->password,
     ];
 });

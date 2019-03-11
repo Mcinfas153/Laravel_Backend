@@ -66,9 +66,9 @@ class UserController extends Controller
      */
     public function show($id): JsonResponse
     {
-        //$users = User::find($id);
+        $users = User::find($id);
 
-        $users = User::with('movies')->whereId($id)->first();
+        //$users = User::with('movies')->whereId($id)->first();
 
         return response()->json([
             "users" => $users
@@ -88,11 +88,6 @@ class UserController extends Controller
         $request->validate([
             'user.first_name'=>'required|max:70',
             'user.last_name'=>'required|max:70',
-            'user.street'=>'required|max:255',
-            'user.city'=>'required|max:255',
-            'user.zip_code'=>'required|max:25',
-            'user.mobil'=>'required|max:255',
-            'user.phone'=>'required|max:255',
             'user.email' => 'required|string|email|max:255',
         ]);
         $input = $request->all();

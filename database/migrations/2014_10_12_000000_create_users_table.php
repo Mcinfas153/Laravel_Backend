@@ -20,9 +20,8 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->default('bitte eintragen');
-            $table->string('login')->default('bitte eintragen');
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password')->nullable;
             $table->string('first_name')->nullable;
             $table->string('last_name')->nullable;
             $table->string('mobil')->default('bitte eintragen');
@@ -41,7 +40,6 @@ class CreateUsersTable extends Migration
         $newAdmin->first_name = 'Anton';
         $newAdmin->last_name = 'Anfang';
         $newAdmin->name = 'geheim';
-        $newAdmin->login = 'geheim';
         $newAdmin->email = 'admin@gmail.com';
         $newAdmin->password = Hash::make('geheim');
 

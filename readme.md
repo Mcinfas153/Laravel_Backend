@@ -101,6 +101,11 @@ curl http://localhost:8000/projects
 
 curl http://localhost:8000/users
 
+
+curl -X PUT -d '{"user": {"first_name":"1312","last_name":"lll", "email":"email2@email.de","g_26":"gggg"}}' -H "Content-Type: application/json" http://localhost:8000//users/2 -i -H "Accept: application/json" | less
+
+curl -X POST -d '{"user": {"first_name":"1312","last_name":"lll", "email":"email2@email.de"}}' -H "Content-Type: application/json" http://localhost:8000//users/ -i -H "Accept: application/json" 
+
 ### Data Model
 
 User / Project - many to many
